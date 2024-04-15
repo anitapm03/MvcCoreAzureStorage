@@ -1,0 +1,13 @@
+﻿<h1>Agregar un blob</h1>
+
+<a asp-action="VerBlobsContainer" asp-controller="AzureBlobs"
+   class="btn btn-dark">
+    Volver
+</a>
+
+<form method="post" enctype="multipart/form-data">
+    <label>Seleccione un archivo</label>    
+    <input type="file" name="file" class="form-control"/>
+    <br />
+    <button class="btn btn-success">Subir</button>
+</form>

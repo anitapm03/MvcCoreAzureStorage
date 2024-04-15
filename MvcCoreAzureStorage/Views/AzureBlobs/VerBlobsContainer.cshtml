@@ -1,0 +1,31 @@
+﻿@model List<BlobModel>
+
+<h1>Lista de Blobs @ViewData["CONTAINER"]</h1>
+
+<a asp-action="UploadBlob" asp-controller="AzureBlobs"
+   class="btn btn-success" asp-route-containername="@ViewData["CONTAINER"]">
+    Subir un blob
+</a>
+
+@if (Model != null)
+{
+    <ul class="list-group">
+        @foreach (BlobModel blob in Model)
+        {
+            <li class="list-group-item">
+                @blob.Nombre
+                
+                <a asp-action="DeleteBlob" asp-controller="AzureBlobs"
+                asp-route-containername="@blob.Contenedor"
+                   asp-route-blobname="@blob.Nombre" class="btn btn-danger">
+                    Delete
+                </a>
+            </li>
+        }
+    </ul>
+}
+
+<a asp-action="Index" asp-controller="AzureBlobs"
+   class="btn btn-success">
+    Volver
+</a>

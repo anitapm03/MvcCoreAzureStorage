@@ -1,0 +1,28 @@
+﻿@model List<string>
+
+<h1>Lista de containers</h1>
+
+<a asp-action="CreateContainer" asp-controller="AzureBlobs"
+   class="btn btn-success">
+    Crear container
+</a>
+
+@if (Model != null)
+{
+    <ul class="list-group">
+        @foreach (string containerName in Model)
+        {
+            <li class="list-group-item">
+                @containerName
+                <a asp-action="VerBlobsContainer" asp-controller="AzureBlobs"
+                   asp-route-containername="@containerName" class="btn btn-info">
+                    Ver Blobs
+                </a>
+                <a asp-action="DeleteContainer" asp-controller="AzureBlobs"
+                   asp-route-containername="@containerName" class="btn btn-danger">
+                    Delete
+                </a>
+            </li>
+        }
+    </ul>
+}

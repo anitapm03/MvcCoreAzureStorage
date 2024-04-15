@@ -1,0 +1,17 @@
+﻿<h1>Crear un contenedor</h1>
+
+<form method="post">
+    <label>Introduce un nombre para el contenedor</label>
+    <input type="text" name="containername" class="form-control"/>
+    <br />
+    <button class="btn btn-primary">Crear!</button>
+</form>
+
+<h2 style="color:greenyellow">
+    @ViewData["MSG"]
+</h2>
+
+<a asp-action="Index" asp-controller="AzureBlobs"
+   class="btn btn-outline-dark">
+    Volver
+</a>
