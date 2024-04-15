@@ -1,0 +1,20 @@
+﻿<h1>Subir un fichero</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <label>Seleccione un fichero</label>
+    <input type="file" name="file" class="form-control" />
+    <br />
+    <button class="btn btn-outline-success">
+        Subir fichero
+    </button>
+</form>
+
+<h2 style="color:forestgreen;">
+    @ViewData["MSG"]
+</h2>
+
+<br />
+<a asp-action="Index" asp-controller="AzureFiles"
+   class="btn btn-info">
+    Volver
+</a>
