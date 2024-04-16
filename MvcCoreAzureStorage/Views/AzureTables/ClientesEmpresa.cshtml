@@ -1,0 +1,40 @@
+﻿@model List<Cliente>
+
+<h1>Buscar clientes por empresa</h1>
+
+<a asp-action="Index" asp-controller="AzureTables"
+   class="btn btn-dark">
+    Volver
+</a>
+
+<form method="post">
+    <label>Empresa</label>
+    <input type="text" name="empresa" class="form-control" />
+    <br />
+    <button class="btn btn-outline-success">Buscar</button>
+</form>
+
+@if (Model != null)
+{
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Salario</th>
+                <th>Empresa</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Cliente cli in Model)
+            {
+                <tr>
+                    <td>@cli.Nombre</td>
+                    <td>@cli.Edad</td>
+                    <td>@cli.Salario</td>
+                    <td>@cli.Empresa</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

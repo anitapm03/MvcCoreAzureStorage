@@ -1,0 +1,25 @@
+﻿<h1>Crear un nuevo cliente</h1>
+
+<a asp-action="Index" asp-controller="AzureTables"
+   class="btn btn-dark">
+    Volver
+</a>
+
+<form method="post">
+    <label>ID Cliente</label>
+    <input type="number" name="idcliente" class="form-control" />
+    <br />
+    <label>Nombre</label>
+    <input type="text" name="nombre" class="form-control"/>
+    <br />
+    <label>Edad</label>
+    <input type="number" name="edad" class="form-control" />
+    <br />
+    <label>Salario</label>
+    <input type="number" name="salario" class="form-control" />
+    <br />
+    <label>Empresa</label>
+    <input type="text" name="empresa" class="form-control" />
+    <br />
+    <button class="btn btn-outline-success">Guardar</button>
+</form>
